@@ -29,5 +29,5 @@ app.post("/posts/:id/comments", (req, res) => {
 });
 
 app.listen(4001, () => {
-  console.log("Listening on 4001");
+  console.log("comment service started at port 4001...");
 });
