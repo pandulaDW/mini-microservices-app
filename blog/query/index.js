@@ -13,6 +13,7 @@ app.get("/posts", (req, res) => {
 
 app.post("/events", (req, res) => {
   const { type, data } = req.body;
+  console.log("Query Service: Received event", type);
 
   if (type === "PostCreated") {
     const { id, title } = data;
@@ -24,7 +25,6 @@ app.post("/events", (req, res) => {
     posts[postID]["comments"].push({ id, content });
   }
 
-  console.log(posts);
   res.json({});
 });
 

@@ -7,6 +7,7 @@ interface Posts {
   [key: string]: {
     id: string;
     title: string;
+    comments: [];
   };
 }
 
@@ -14,7 +15,7 @@ const PostList = () => {
   const [posts, setPosts] = useState<Posts>({});
 
   const fetchPosts = async () => {
-    const res = await axios.get("http://localhost:4000/posts");
+    const res = await axios.get("http://localhost:4002/posts");
     setPosts(res.data);
   };
 
@@ -30,7 +31,7 @@ const PostList = () => {
     >
       <div className="card-body">
         <h3>{post.title}</h3>
-        <CommentList postID={post.id} />
+        <CommentList comments={post.comments} />
         <CommentCreate postID={post.id} />
       </div>
     </div>
