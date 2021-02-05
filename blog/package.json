@@ -7,8 +7,9 @@
     "start-client": "cd client && npm start",
     "start-posts": "cd posts && npm start",
     "start-comments": "cd comments && npm start",
+    "start-query": "cd query && npm start",
     "start-event-bus": "cd event-bus && npm start",
-    "start": "concurrently \"npm run start-client\" \"npm run start-posts\" \"npm run start-comments\" \"npm run start-event-bus\""
+    "start": "concurrently \"npm run start-client\" \"npm run start-posts\" \"npm run start-comments\" \"npm run start-query\" \"npm run start-event-bus\""
   },
   "keywords": [],
   "author": "",
