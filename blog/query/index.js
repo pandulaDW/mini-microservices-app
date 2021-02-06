@@ -7,7 +7,7 @@ app.use(cors());
 
 const posts = {};
 
-app.get("/posts", (req, res) => {
+app.get("/posts", (_, res) => {
   res.json(posts);
 });
 
@@ -21,8 +21,16 @@ app.post("/events", (req, res) => {
   }
 
   if (type === "CommentCreated") {
-    const { id, content, postID } = data;
-    posts[postID]["comments"].push({ id, content });
+    const { id, content, postID, status } = data;
+    posts[postID]["comments"].push({ id, content, status });
+  }
+
+  if (type === "CommentUpdated") {
+    const { id, postID } = data;
+    const index = posts[postID]["comments"].findIndex(
+      (comment) => comment.id === id
+    );
+    posts[postID]["comments"][index] = data;
   }
 
   res.json({});
