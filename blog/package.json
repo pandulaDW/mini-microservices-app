@@ -10,6 +10,7 @@
     "start-query": "cd query && npm start",
     "start-moderation": "cd moderation && npm start",
     "start-event-bus": "cd event-bus && npm start",
+    "start-main-features": "concurrently \"npm run start-client\" \"npm run start-posts\" \"npm run start-comments\" \"npm run start-moderation\" \"npm run start-event-bus\"",
     "start": "concurrently \"npm run start-client\" \"npm run start-posts\" \"npm run start-comments\" \"npm run start-query\" \"npm run start-moderation\" \"npm run start-event-bus\""
   },
   "keywords": [],
