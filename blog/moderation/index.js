@@ -5,14 +5,14 @@ const app = express();
 app.use(express.json());
 
 app.post("/events", async (req, res) => {
-  console.log("Moderation Service: Received event", req.body.type);
+  console.log("Moderation Service: Received event", req.body);
   const { type, data } = req.body;
 
   if (type === "CommentCreated") {
     const status = data.content.includes("fuck") ? "rejected" : "approved";
     await axios.post("http://localhost:4005/events", {
       type: "CommentModerated",
-      data: { ...data.content, status },
+      data: { ...data, status },
     });
   }
 
