@@ -37,5 +37,5 @@ app.post("/events", (req, res) => {
 });
 
 app.listen(4000, () => {
-  console.log("post service started at port 4000...");
+  console.log("post service v.20 started at port 4000...");
 });
