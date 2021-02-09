@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: posts
-          image: pandulaweerasooriya/posts:0.0.1
+          image: pandulaweerasooriya/posts
           resources:
             limits:
               memory: "128Mi"
