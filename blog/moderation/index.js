@@ -17,7 +17,7 @@ app.post("/events", async (req, res) => {
   if (type === "CommentCreated") {
     await timeout(2000);
     const status = data.content.includes("fuck") ? "rejected" : "approved";
-    await axios.post("http://localhost:4005/events", {
+    await axios.post("http://event-bus-srv:4005/events", {
       type: "CommentModerated",
       data: { ...data, status },
     });
