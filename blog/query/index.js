@@ -34,6 +34,7 @@ app.get("/posts", (_, res) => {
 });
 
 app.post("/events", (req, res) => {
+  console.log("Query Service: Received event", req.body);
   handleEvent(req.body);
   res.json({});
 });
