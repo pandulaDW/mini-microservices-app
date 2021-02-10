@@ -17,8 +17,8 @@ spec:
           image: pandulaweerasooriya/client
           resources:
             limits:
-              memory: "128Mi"
-              cpu: "0.1"
+              memory: "512Mi"
+              cpu: "0.2"
 ---
 apiVersion: v1
 kind: Service
